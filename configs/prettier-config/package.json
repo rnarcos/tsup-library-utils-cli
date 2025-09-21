@@ -1,0 +1,46 @@
+{
+  "name": "@tsup-lib/prettier-config",
+  "version": "0.0.1",
+  "description": "Prettier configuration for tsup-library-utils-cli projects",
+  "license": "MIT",
+  "type": "commonjs",
+  "private": false,
+  "main": "src/index.ts",
+  "exports": {
+    ".": {
+      "require": "./src/index.js"
+    },
+    "./base": {
+      "require": "./src/base.js"
+    },
+    "./web": {
+      "require": "./src/web.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "*.cjs",
+    "cjs/**",
+    "esm/**"
+  ],
+  "scripts": {
+    "build": "tsup-lib build",
+    "clean": "tsup-lib clean",
+    "dev": "tsup-lib dev --library",
+    "typecheck": "echo \"No TypeScript file iss to check\"",
+    "format": "prettier --write \"src/**/*.{js,cjs,json,md}\"",
+    "lint": "echo \"Config files are linted by consuming projects\""
+  },
+  "peerDependencies": {
+    "prettier": "^3.0.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5"
+  },
+  "keywords": [
+    "prettier",
+    "prettier-config",
+    "formatting",
+    "code-style"
+  ]
+}

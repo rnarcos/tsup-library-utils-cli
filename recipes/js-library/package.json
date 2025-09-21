@@ -1,0 +1,51 @@
+{
+  "name": "@tsup-library-utils-cli/js-library-example",
+  "version": "1.0.0",
+  "description": "JavaScript library example using JSDoc for type checking",
+  "type": "module",
+  "main": "src/index.ts",
+  "module": "src/index.ts",
+  "types": "src/index.ts",
+  "exports": {
+    ".": {
+      "require": "./src/index.js",
+      "import": "./src/index.js",
+      "types": "./src/index.js"
+    },
+    "./utils": {
+      "require": "./src/utils.js",
+      "import": "./src/utils.js",
+      "types": "./src/utils.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "esm",
+    "cjs",
+    "utils"
+  ],
+  "scripts": {
+    "build": "tsup-lib build",
+    "clean": "tsup-lib clean",
+    "dev": "tsup-lib dev --single-repo",
+    "test": "node --test src/**/*.test.js",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write \"src/**/*.{js,ts,json,md}\"",
+    "lint": "echo \"No linting configured for this example\""
+  },
+  "keywords": [
+    "javascript",
+    "library",
+    "example",
+    "jsdoc",
+    "tsup"
+  ],
+  "author": "Library Maintainers Community",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "tsup-library-utils-cli": "workspace:*",
+    "typescript": "^5.3.3"
+  }
+}

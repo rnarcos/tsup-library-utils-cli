@@ -1,0 +1,20 @@
+# Build outputs
+**/cjs/**
+**/esm/**
+**/dist/**
+
+# Cache directories
+**/.cache/**
+**/.turbo/**
+**/node_modules/**
+
+# Verdaccio storage
+**/storage/**
+
+# Config files
+*.config.js
+*.config.cjs
+*.config.mjs
+
+# Generated files
+**/.verdaccio/**

@@ -1,0 +1,81 @@
+{
+  "name": "tsup-library-utils-cli",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "cjs/index.cjs",
+  "module": "esm/index.js",
+  "types": "esm/index.d.ts",
+  "bin": {
+    "tsup-lib": "./cjs/index.cjs"
+  },
+  "exports": {
+    "./utils/input": {
+      "types": "./esm/utils/input.d.ts",
+      "import": "./esm/utils/input.js",
+      "require": "./cjs/utils/input.cjs"
+    },
+    "./utils/package": {
+      "types": "./esm/utils/package.d.ts",
+      "import": "./esm/utils/package.js",
+      "require": "./cjs/utils/package.cjs"
+    },
+    "./utils/validation": {
+      "types": "./esm/utils/validation.d.ts",
+      "import": "./esm/utils/validation.js",
+      "require": "./cjs/utils/validation.cjs"
+    },
+    "./schemas/config": {
+      "types": "./esm/schemas/config.d.ts",
+      "import": "./esm/schemas/config.js",
+      "require": "./cjs/schemas/config.cjs"
+    },
+    "./commands/build": {
+      "types": "./esm/commands/build.d.ts",
+      "import": "./esm/commands/build.js",
+      "require": "./cjs/commands/build.cjs"
+    },
+    "./commands/clean": {
+      "types": "./esm/commands/clean.d.ts",
+      "import": "./esm/commands/clean.js",
+      "require": "./cjs/commands/clean.cjs"
+    },
+    "./commands/dev": {
+      "types": "./esm/commands/dev.d.ts",
+      "import": "./esm/commands/dev.js",
+      "require": "./cjs/commands/dev.cjs"
+    },
+    "./commands/publish-staging": {
+      "types": "./esm/commands/publish-staging.d.ts",
+      "import": "./esm/commands/publish-staging.js",
+      "require": "./cjs/commands/publish-staging.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "chokidar": "^3.5.3",
+    "commander": "^12.0.0",
+    "cross-spawn": "^7.0.3",
+    "fs-extra": "^11.2.0",
+    "glob": "^10.3.10",
+    "rimraf": "^5.0.5",
+    "tsup": "^8.0.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/cross-spawn": "^6.0.6",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^20.11.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.3.3"
+  },
+  "scripts": {
+    "build": "node src/index.js build --library",
+    "clean": "node src/index.js clean --library",
+    "dev": "node src/index.js dev --library",
+    "dev:watch": "node src/index.js dev --library --watch",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write \"src/**/*.{js,ts,json,md}\"",
+    "lint": "ESLINT_USE_FLAT_CONFIG=false eslint \"src/**/*.{js,ts}\""
+  }
+}
